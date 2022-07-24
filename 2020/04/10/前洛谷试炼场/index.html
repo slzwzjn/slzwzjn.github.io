@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>前洛谷试炼场 - slzwzjn 的博客</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="slzwzjn 的博客"><meta name="msapplication-TileImage" content="https://imgtu.com/i/6KFQaT"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="slzwzjn 的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="128x128" href="https://imgtu.com/i/6KFQaT"><meta name="description" content="试炼场已经被撤下，就用这篇博客充当纪念吧！（非官方）其实试炼场比题单要梯级化一些，因为试炼场不但对算法进行了分类，还对难度进行了分类。"><meta property="og:type" content="blog"><meta property="og:title" content="前洛谷试炼场"><meta property="og:url" content="https://slzwzjn.github.io/2020/04/10/%E5%89%8D%E6%B4%9B%E8%B0%B7%E8%AF%95%E7%82%BC%E5%9C%BA/"><meta property="og:site_name" content="slzwzjn 的博客"><meta property="og:description" content="试炼场已经被撤下，就用这篇博客充当纪念吧！（非官方）其实试炼场比题单要梯级化一些，因为试炼场不但对算法进行了分类，还对难度进行了分类。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://slzwzjn.github.io/img/og_image.png"><meta property="article:published_time" content="2020-04-09T23:45:46.000Z"><meta property="article:modified_time" content="2021-03-20T10:31:53.625Z"><meta property="article:author" content="slzwzjn"><meta property="article:tag" content="编程"><meta property="article:tag" content="算法竞赛"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://slzwzjn.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://slzwzjn.github.io/2020/04/10/%E5%89%8D%E6%B4%9B%E8%B0%B7%E8%AF%95%E7%82%BC%E5%9C%BA/"},"headline":"前洛谷试炼场","image":["https://slzwzjn.github.io/img/og_image.png"],"datePublished":"2020-04-09T23:45:46.000Z","dateModified":"2021-03-20T10:31:53.625Z","author":{"@type":"Person","name":"slzwzjn"},"publisher":{"@type":"Organization","name":"slzwzjn 的博客","logo":{"@type":"ImageObject","url":"https://slzwzjn.github.io/img/logo.png"}},"description":"试炼场已经被撤下，就用这篇博客充当纪念吧！（非官方）其实试炼场比题单要梯级化一些，因为试炼场不但对算法进行了分类，还对难度进行了分类。"}</script><link rel="canonical" href="https://slzwzjn.github.io/2020/04/10/%E5%89%8D%E6%B4%9B%E8%B0%B7%E8%AF%95%E7%82%BC%E5%9C%BA/"><link rel="icon" href="/img/avatarz.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="slzwzjn 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="github" href="https://github.com/slzwzjn"><i class="fab fa-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="weibo" href="https://www.weibo.com/u/5277288388"><i class="fab fa-weibo"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="知乎" href="https://www.zhihu.com/people/zhang-jianing-2005">知乎</a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-04-09T23:45:46.000Z" title="2020/4/10 07:45:46">2020-04-10</time>发表</span><span class="level-item"><time dateTime="2021-03-20T10:31:53.625Z" title="2021/3/20 18:31:53">2021-03-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E4%BF%A1%E6%81%AF%E5%AD%A6/">信息学</a></span><span class="level-item">1 小时读完 (大约6706个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">前洛谷试炼场</h1><div class="content"><p>试炼场已经被撤下，就用这篇博客充当纪念吧！（非官方）其实试炼场比题单要梯级化一些，因为试炼场不但对算法进行了分类，还对难度进行了分类。</p>
+<span id="more"></span>
+
+<h1 id="新手村"><a href="#新手村" class="headerlink" title="新手村"></a>新手村</h1><p>任何一个伟大的目标，都有一个微不足道的开始。</p>
+<h2 id="洛谷的第一个任务"><a href="#洛谷的第一个任务" class="headerlink" title="洛谷的第一个任务"></a>洛谷的第一个任务</h2><p>勇敢的迈出第一步，了解下语言和洛谷。跟着书本和老师走，不会难的。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1000">P1000</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1001">P1001</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1421">P1421</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1425">P1425</a></li>
+</ul>
+<h2 id="顺序与分支"><a href="#顺序与分支" class="headerlink" title="顺序与分支"></a>顺序与分支</h2><p>计算机的智能性开始得以体现，因为计算机能够根据不同的条件选择了。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1422">P1422</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1085">P1085</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1089">P1089</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1909">P1909</a></li>
+</ul>
+<h2 id="循环！循环！循环！"><a href="#循环！循环！循环！" class="headerlink" title="循环！循环！循环！"></a>循环！循环！循环！</h2><p>计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1008">P1008</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1035">P1035</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1423">P1423</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1424">P1424</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1980">P1980</a></li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>跟数组有关的题目基本上都要用到循环，所以请先完成1-3。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1046">P1046</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1047">P1047</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1427">P1427</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1428">P1428</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2141">P2141</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1567">P1567</a></li>
+</ul>
+<h2 id="简单字符串"><a href="#简单字符串" class="headerlink" title="简单字符串"></a>简单字符串</h2><p>计算机不仅可以处理数字，还能处理文字！就是其实跟数字也没什么差。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1055">P1055</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1200">P1200</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1308">P1308</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1553">P1553</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1598">P1598</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1914">P1914</a></li>
+</ul>
+<h2 id="过程函数与递归"><a href="#过程函数与递归" class="headerlink" title="过程函数与递归"></a>过程函数与递归</h2><p>将代码串进行打包，就是过程与函数。过程与函数调用自己则为递归。有一点小难但不要怕哦。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1028">P1028</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1036">P1036</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1149">P1149</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1217">P1217</a></li>
+</ul>
+<h2 id="BOSS战-入门综合练习1"><a href="#BOSS战-入门综合练习1" class="headerlink" title="BOSS战-入门综合练习1"></a>BOSS战-入门综合练习1</h2><p>这里将前面的内容综合起来了，会有点难，不过你可以问老师同学，也能上网查资料。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1478">P1478</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1618">P1618</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1579">P1579</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2089">P2089</a></li>
+</ul>
+<h2 id="BOSS战-入门综合练习2"><a href="#BOSS战-入门综合练习2" class="headerlink" title="BOSS战-入门综合练习2"></a>BOSS战-入门综合练习2</h2><p>勇士，竟然来到了BOSS的老巢！来一场恶斗，证明自己的实力，解锁下一个级别！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1426">P1426</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1464">P1464</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1014">P1014</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1022">P1022</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1307">P1307</a></li>
+</ul>
+<h1 id="普及练习场"><a href="#普及练习场" class="headerlink" title="普及练习场"></a>普及练习场</h1><p>普及组选手可冲刺训练，提高组选手亦可在此巩固基础。</p>
+<h2 id="简单的模拟"><a href="#简单的模拟" class="headerlink" title="简单的模拟"></a>简单的模拟</h2><p>开始普及组的训练！所谓模拟，就是直接根据题意编写，思维难度简单。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1003">P1003</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1067">P1067</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1540">P1540</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1056">P1056</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1328">P1328</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1563">P1563</a></li>
+</ul>
+<h2 id="交叉模拟"><a href="#交叉模拟" class="headerlink" title="交叉模拟"></a>交叉模拟</h2><p>这里也是模拟，但是会混有些别的部分。思维难度不大，但是编写起来会有些难度。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1023">P1023</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1031">P1031</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1042">P1042</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1086">P1086</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1098">P1098</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3952">P3952</a></li>
+</ul>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>将杂乱无章的数据变得有规律。有各种各样的排序算法，看情况使用。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1177">P1177</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1059">P1059</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1068">P1068</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1781">P1781</a></li>
+</ul>
+<h2 id="排序Ex"><a href="#排序Ex" class="headerlink" title="排序Ex"></a>排序Ex</h2><p>这里的排序就更上一层了。不仅融合了别的算法与技巧，排序本身也有各种花招。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1583">P1583</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1051">P1051</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1093">P1093</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1309">P1309</a></li>
+</ul>
+<h2 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h2><p>这里的字符串处理还会变得更加的有意思，难度也更大。需要好好地思考一下。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1603">P1603</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1071">P1071</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1012">P1012</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1538">P1538</a></li>
+</ul>
+<h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2><p>贪心就是只考虑眼前的利益。对于我们人生来说太贪是不好的，不过oi中，有时是对的。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1090">P1090</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1181">P1181</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1208">P1208</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1223">P1223</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1094">P1094</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1803">P1803</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1031">P1031</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1080">P1080</a></li>
+</ul>
+<h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><p>搜索可以穷举各种情况。很多题目都可以用搜索完成。就算不能，搜索也是骗分神器。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1219">P1219</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1019">P1019</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1101">P1101</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1605">P1605</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1040">P1040</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1092">P1092</a></li>
+</ul>
+<h2 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><p>广度优先搜索可以用来找有关“最短步数”的问题。恩，也可以用来“地毯式搜索”。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1162">P1162</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1032">P1032</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1141">P1141</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1126">P1126</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1443">P1443</a></li>
+</ul>
+<h2 id="带有技巧的搜索"><a href="#带有技巧的搜索" class="headerlink" title="带有技巧的搜索"></a>带有技巧的搜索</h2><p>这里的搜索不仅包含了dfs和bfs，还包括剪枝、记录等技巧以加快速度。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1118">P1118</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1434">P1434</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1433">P1433</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1074">P1074</a></li>
+</ul>
+<h2 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h2><p>将大问题拆分为小问题，分而治之，各个击破，然后在合并回来。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1226">P1226</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1010">P1010</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1908">P1908</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1498">P1498</a></li>
+</ul>
+<h2 id="简单数学问题"><a href="#简单数学问题" class="headerlink" title="简单数学问题"></a>简单数学问题</h2><p>用计算机解决某些麻烦数学问题，再合适不过了。这真是绝妙的搭配啊！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1088">P1088</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1045">P1045</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1403">P1403</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1017">P1017</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1147">P1147</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1029">P1029</a></li>
+</ul>
+<h2 id="递推与递归二分"><a href="#递推与递归二分" class="headerlink" title="递推与递归二分"></a>递推与递归二分</h2><p>递推，层层递进，由基础推向顶层。二分不仅可以用来查找数据，还可以确定最合适的值。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1192">P1192</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1025">P1025</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1057">P1057</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1135">P1135</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1216">P1216</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1182">P1182</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1316">P1316</a></li>
+</ul>
+<h2 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h2><p>数组，链表，队列，栈，都是线性结构。巧用这些结构可以做出不少方便的事情。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1996">P1996</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1115">P1115</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1739">P1739</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1160">P1160</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1449">P1449</a></li>
+</ul>
+<h2 id="树形数据结构"><a href="#树形数据结构" class="headerlink" title="树形数据结构"></a>树形数据结构</h2><p>由一个根节点分叉，越分越多，就成了树。树可以表示数据之间的从属关系</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1087">P1087</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1030">P1030</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1305">P1305</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5018">P5018</a></li>
+</ul>
+<h2 id="动态规划的背包问题"><a href="#动态规划的背包问题" class="headerlink" title="动态规划的背包问题"></a>动态规划的背包问题</h2><p>这是最基础的动态规划。不过如果是第一次接触会有些难以理解。加油闯过这个坎。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1060">P1060</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1164">P1164</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1064">P1064</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1048">P1048</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1049">P1049</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1616">P1616</a></li>
+</ul>
+<h2 id="线性动态规划"><a href="#线性动态规划" class="headerlink" title="线性动态规划"></a>线性动态规划</h2><p>这也是基础的动态规划。是在线性结构上面的动态规划，一定要掌握。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1020">P1020</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1091">P1091</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1280">P1280</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1880">P1880</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1140">P1140</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1282">P1282</a></li>
+</ul>
+<h2 id="多维动态规划"><a href="#多维动态规划" class="headerlink" title="多维动态规划"></a>多维动态规划</h2><p>这里的动态规划就不止一维了。不仅要小心时间复杂度，也要注意空间复杂度。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1508">P1508</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1006">P1006</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1387">P1387</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1417">P1417</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1855">P1855</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1736">P1736</a></li>
+</ul>
+<h2 id="更要技巧的动规与记忆化"><a href="#更要技巧的动规与记忆化" class="headerlink" title="更要技巧的动规与记忆化"></a>更要技巧的动规与记忆化</h2><p>这边的题目有各种搞法。当然有的题目也可以使用记忆化搜索来降低思维难度。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1064">P1064</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1541">P1541</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1026">P1026</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1063">P1063</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1156">P1156</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1052">P1052</a></li>
+</ul>
+<h2 id="高精度算法"><a href="#高精度算法" class="headerlink" title="高精度算法"></a>高精度算法</h2><p>就算是long long（或int64）还不够怎么办？用高精度算法。自己动手丰衣足食。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1601">P1601</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2142">P2142</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1303">P1303</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1255">P1255</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1604">P1604</a></li>
+</ul>
+<h2 id="贪心EX"><a href="#贪心EX" class="headerlink" title="贪心EX"></a>贪心EX</h2><p>虽然是贪心题，可能不是你当时你虐着玩的贪心惹qwq</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1080">P1080</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1031">P1031</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1233">P1233</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2123">P2123</a></li>
+</ul>
+<h2 id="简单数学"><a href="#简单数学" class="headerlink" title="简单数学"></a>简单数学</h2><p>数学和oi是密切相关的，数学不仅是oi的基础，而且是算法的核心。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1865">P1865</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1372">P1372</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1338">P1338</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2158">P2158</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1582">P1582</a></li>
+</ul>
+<h2 id="BOSS战-普及综合练习1"><a href="#BOSS战-普及综合练习1" class="headerlink" title="BOSS战-普及综合练习1"></a>BOSS战-普及综合练习1</h2><p>好不容易闯到这一关，你那还等什么呢？抄起家伙赶快上啊！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1478">P1478</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1203">P1203</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1363">P1363</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1736">P1736</a></li>
+</ul>
+<h2 id="BOSS战-普及综合练习2"><a href="#BOSS战-普及综合练习2" class="headerlink" title="BOSS战-普及综合练习2"></a>BOSS战-普及综合练习2</h2><p>来搞定第二个BOSS。虽然战斗艰难，但你一定没有问题。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1201">P1201</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1095">P1095</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1058">P1058</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2258">P2258</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1108">P1108</a></li>
+</ul>
+<h2 id="BOSS战-普及综合练习3"><a href="#BOSS战-普及综合练习3" class="headerlink" title="BOSS战-普及综合练习3"></a>BOSS战-普及综合练习3</h2><p>普及练习场的大BOSS：“一定让你有去无回”。怎么办呢？只能打倒他开启下一个级别！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1328">P1328</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1062">P1062</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1969">P1969</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1037">P1037</a></li>
+</ul>
+<h2 id="普及常见模板"><a href="#普及常见模板" class="headerlink" title="普及常见模板"></a>普及常见模板</h2><p>这里集中了比较基础的算法的模板。提高和省选也有模板题哦！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1177">P1177</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3366">P3366</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3367">P3367</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3371">P3371</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3383">P3383</a></li>
+</ul>
+<h1 id="提高历练地"><a href="#提高历练地" class="headerlink" title="提高历练地"></a>提高历练地</h1><p>已经去除了普及组难度的，请组织放心。成长大牛之必写题！！！</p>
+<h2 id="搜索Ex"><a href="#搜索Ex" class="headerlink" title="搜索Ex"></a>搜索Ex</h2><p>开始提高组的试炼。这里已经去除了所有普及组难度的题目。哼哼，怕了吧。。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1120">P1120</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1378">P1378</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1514">P1514</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1312">P1312</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1441">P1441</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1242">P1242</a></li>
+</ul>
+<h2 id="动态规划TG-lv-1"><a href="#动态规划TG-lv-1" class="headerlink" title="动态规划TG.lv(1)"></a>动态规划TG.lv(1)</h2><p>这是提高组难度中比较基础的动态规划，也许一两个转移方程就可以写出。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1005">P1005</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1373">P1373</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2279">P2279</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1220">P1220</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1156">P1156</a></li>
+</ul>
+<h2 id="动态规划TG-lv-2"><a href="#动态规划TG-lv-2" class="headerlink" title="动态规划TG.lv(2)"></a>动态规划TG.lv(2)</h2><p>这里的动态规划稍稍有所加大难度，思考转移方程的时间可能会与编写程序的时间持平。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1273">P1273</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1169">P1169</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2577">P2577</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1070">P1070</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2051">P2051</a></li>
+</ul>
+<h2 id="动态规划TG-lv-3"><a href="#动态规划TG-lv-3" class="headerlink" title="动态规划TG.lv(3)"></a>动态规划TG.lv(3)</h2><p>比较需要技巧的动态规划。有的不仅仅需要状态转移方程，可能还会与别的算法综合。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1415">P1415</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2157">P2157</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2216">P2216</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2331">P2331</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2467">P2467</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3084">P3084</a></li>
+</ul>
+<h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h2><p>数论就是研究整数的理论。包括公约公倍数、质数、欧拉定理和同余方程等。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2152">P2152</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1414">P1414</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1134">P1134</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1313">P1313</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1306">P1306</a></li>
+</ul>
+<h2 id="博弈论"><a href="#博弈论" class="headerlink" title="博弈论"></a>博弈论</h2><p>博弈论考虑游戏中的个体的预测行为和实际行为，并研究它们的优化策略。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1199">P1199</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1288">P1288</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1290">P1290</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2148">P2148</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1247">P1247</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2575">P2575</a></li>
+</ul>
+<h2 id="其他数学问题"><a href="#其他数学问题" class="headerlink" title="其他数学问题"></a>其他数学问题</h2><p>听说学oi的同志们数学都挺好。那么。就请完成下面的题目证明这一点吧！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1357">P1357</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1641">P1641</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2059">P2059</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2154">P2154</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2261">P2261</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2327">P2327</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1066">P1066</a></li>
+</ul>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><p>图是一种非常重要的数据结构，描述对象复杂的练习。这里开始接触图的基本概念。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2661">P2661</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1330">P1330</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1341">P1341</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2921">P2921</a></li>
+</ul>
+<h2 id="最短路问题"><a href="#最短路问题" class="headerlink" title="最短路问题"></a>最短路问题</h2><p>最短路是图论中最重要的部分，多种算法可以应用。很多题目都可以抽象成这种模型。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1339">P1339</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1462">P1462</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1346">P1346</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1119">P1119</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1144">P1144</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1522">P1522</a></li>
+</ul>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>最小生成树可以用kruskal（克鲁斯卡尔）算法或prim（普里姆）算法求出。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1546">P1546</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2330">P2330</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1991">P1991</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1265">P1265</a></li>
+</ul>
+<h2 id="较复杂图论I"><a href="#较复杂图论I" class="headerlink" title="较复杂图论I"></a>较复杂图论I</h2><p>别的些图论问题，包括树、拓扑排序等。要过这一关，需要学习不少新的算法。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1113">P1113</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1268">P1268</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1525">P1525</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1983">P1983</a></li>
+</ul>
+<h2 id="较复杂图论II"><a href="#较复杂图论II" class="headerlink" title="较复杂图论II"></a>较复杂图论II</h2><p>更高级的图论算法。包括差分约束、强连通、二分图等。会更难一些。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1993">P1993</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1726">P1726</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2055">P2055</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2149">P2149</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1345">P1345</a></li>
+</ul>
+<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><p>用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1111">P1111</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2024">P2024</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1197">P1197</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1196">P1196</a></li>
+</ul>
+<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>堆总是一棵完全树；堆中某个节点的值总是不大于或不小于其父节点的值。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1801">P1801</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2278">P2278</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1631">P1631</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2085">P2085</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1484">P1484</a></li>
+</ul>
+<h2 id="线段树树状数组基础"><a href="#线段树树状数组基础" class="headerlink" title="线段树树状数组基础"></a>线段树树状数组基础</h2><p>这都是比较高级的线性数据结构。在处理一些询问与修改线性问题时，是很好用的。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1972">P1972</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1198">P1198</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2023">P2023</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2161">P2161</a></li>
+</ul>
+<h2 id="神奇的解法"><a href="#神奇的解法" class="headerlink" title="神奇的解法"></a>神奇的解法</h2><p>有些问题刚开始觉得无从下手。好好想一想，尽量别看题解，否则你会大呼“简单”。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1007">P1007</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1984">P1984</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2022">P2022</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2320">P2320</a></li>
+</ul>
+<h2 id="倍增"><a href="#倍增" class="headerlink" title="倍增"></a>倍增</h2><p>一种特殊的枚举算法，但可大大加快效率。近年noip有考到。难度较大。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1967">P1967</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1081">P1081</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1613">P1613</a></li>
+</ul>
+<h2 id="强连通分量"><a href="#强连通分量" class="headerlink" title="强连通分量"></a>强连通分量</h2><p>强连通分量</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2341">P2341</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3469">P3469</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2746">P2746</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3119">P3119</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3225">P3225</a></li>
+</ul>
+<h2 id="BOSS战-提高综合练习1"><a href="#BOSS战-提高综合练习1" class="headerlink" title="BOSS战-提高综合练习1"></a>BOSS战-提高综合练习1</h2><p>年轻人，又是个送上门的，让我来看看你真实的本领。啊哈哈哈哈哈！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2264">P2264</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1772">P1772</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1083">P1083</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1979">P1979</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2939">P2939</a></li>
+</ul>
+<h2 id="BOSS战-提高综合练习2"><a href="#BOSS战-提高综合练习2" class="headerlink" title="BOSS战-提高综合练习2"></a>BOSS战-提高综合练习2</h2><p>再来！这里有的题目并非单纯的考察某个算法，而是考察一种综合性的思维。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1901">P1901</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1314">P1314</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2144">P2144</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1073">P1073</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2324">P2324</a></li>
+</ul>
+<h2 id="BOSS战-提高综合练习3"><a href="#BOSS战-提高综合练习3" class="headerlink" title="BOSS战-提高综合练习3"></a>BOSS战-提高综合练习3</h2><p>既然已经打倒了前面2个boss，那么第3个也是没有问题的。少年，来吧！</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1965">P1965</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1311">P1311</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2296">P2296</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1084">P1084</a></li>
+</ul>
+<h2 id="提高模板-nlogn数据结构"><a href="#提高模板-nlogn数据结构" class="headerlink" title="提高模板-nlogn数据结构"></a>提高模板-nlogn数据结构</h2><p>虽然这些算法不是noip必须的，但是不算困难，很多题目可以使用这些方法。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3374">P3374</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3368">P3368</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3372">P3372</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3373">P3373</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1439">P1439</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3378">P3378</a></li>
+</ul>
+<h1 id="省选斗兽场-x2F-NOI神殿"><a href="#省选斗兽场-x2F-NOI神殿" class="headerlink" title="省选斗兽场&#x2F;NOI神殿"></a>省选斗兽场&#x2F;NOI神殿</h1><p>为省选及以上选手制作的训练场。其实，省选水平的oier不需要一些外加的刷题列表，本栏仅供参考，也欢迎各位指出不足。</p>
+<h2 id="省选基础-读入-x2F-输出优化"><a href="#省选基础-读入-x2F-输出优化" class="headerlink" title="省选基础-读入&#x2F;输出优化"></a>省选基础-读入&#x2F;输出优化</h2><p>读入&#x2F;输出优化是省选刷题时必要的一个东西，这里给出了几题，需要自己手写相应的读入输出处理。作为第一关，这一关相对简单。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1580">P1580</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2393">P2393</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2394">P2394</a></li>
+</ul>
+<h2 id="省选基础-位运算"><a href="#省选基础-位运算" class="headerlink" title="省选基础-位运算"></a>省选基础-位运算</h2><p>位运算往往在必要的时候,能带你优化一下常数,也许是空间;也许是时间;有的时候这样可以多过很多分</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2114">P2114</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2396">P2396</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2397">P2397</a></li>
+</ul>
+<h2 id="省选基础-打表"><a href="#省选基础-打表" class="headerlink" title="省选基础-打表"></a>省选基础-打表</h2><p>打表虽然很赖皮,而且基本都是非正解,但是这种办法能让我们在省选中拿到一些会超时或者会超空间的一些数据点</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1149">P1149</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1463">P1463</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1896">P1896</a></li>
+</ul>
+<h2 id="动态规划1"><a href="#动态规划1" class="headerlink" title="动态规划1"></a>动态规划1</h2><p>动态规划</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2051">P2051</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1879">P1879</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1850">P1850</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2831">P2831</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1131">P1131</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1169">P1169</a></li>
+</ul>
+<h2 id="动态规划2"><a href="#动态规划2" class="headerlink" title="动态规划2"></a>动态规划2</h2><p>动态规划</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1273">P1273</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3648">P3648</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2519">P2519</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2515">P2515</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3233">P3233</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2501">P2501</a></li>
+</ul>
+<h2 id="网络流——最大流"><a href="#网络流——最大流" class="headerlink" title="网络流——最大流"></a>网络流——最大流</h2><p>最大流</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2765">P2765</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2764">P2764</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2763">P2763</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2766">P2766</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2774">P2774</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2805">P2805</a></li>
+</ul>
+<h2 id="网络流——费用流"><a href="#网络流——费用流" class="headerlink" title="网络流——费用流"></a>网络流——费用流</h2><p>费用流</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2153">P2153</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2053">P2053</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3159">P3159</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2604">P2604</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2050">P2050</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3980">P3980</a></li>
+</ul>
+<h2 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h2><p>单调队列</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2698">P2698</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2216">P2216</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2219">P2219</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2564">P2564</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2569">P2569</a></li>
+</ul>
+<h2 id="概率期望"><a href="#概率期望" class="headerlink" title="概率期望"></a>概率期望</h2><p>概率期望</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2473">P2473</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2221">P2221</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3317">P3317</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3343">P3343</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3600">P3600</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3830">P3830</a></li>
+</ul>
+<h2 id="二分图"><a href="#二分图" class="headerlink" title="二分图"></a>二分图</h2><p>二分图</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3386">P3386</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1640">P1640</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1129">P1129</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1963">P1963</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3231">P3231</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2526">P2526</a></li>
+</ul>
+<h2 id="点分治"><a href="#点分治" class="headerlink" title="点分治"></a>点分治</h2><p>点分治</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2634">P2634</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2664">P2664</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3806">P3806</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3676">P3676</a></li>
+</ul>
+<h2 id="后缀数组"><a href="#后缀数组" class="headerlink" title="后缀数组"></a>后缀数组</h2><p>后缀数组</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3809">P3809</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1117">P1117</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2178">P2178</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2463">P2463</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2336">P2336</a></li>
+</ul>
+<h2 id="主席树"><a href="#主席树" class="headerlink" title="主席树"></a>主席树</h2><p>主席树</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2468">P2468</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3157">P3157</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3302">P3302</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3168">P3168</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3313">P3313</a></li>
+</ul>
+<h2 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h2><p>数位DP</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2602">P2602</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3281">P3281</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2518">P2518</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2606">P2606</a></li>
+</ul>
+<h2 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h2><p>AC自动机</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3808">P3808</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3796">P3796</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2444">P2444</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2414">P2414</a></li>
+</ul>
+<h2 id="平衡树"><a href="#平衡树" class="headerlink" title="平衡树"></a>平衡树</h2><p>平衡树</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2042">P2042</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2596">P2596</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1110">P1110</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3285">P3285</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3644">P3644</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3765">P3765</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3369">P3369</a></li>
+</ul>
+<h2 id="树链剖分"><a href="#树链剖分" class="headerlink" title="树链剖分"></a>树链剖分</h2><p>树链剖分</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2590">P2590</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2486">P2486</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2146">P2146</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3258">P3258</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3178">P3178</a></li>
+</ul>
+<h2 id="动态树"><a href="#动态树" class="headerlink" title="动态树"></a>动态树</h2><p>动态树</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3690">P3690</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2387">P2387</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3203">P3203</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3348">P3348</a></li>
+</ul>
+<h2 id="树套树"><a href="#树套树" class="headerlink" title="树套树"></a>树套树</h2><p>树套树</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1903">P1903</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3157">P3157</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3332">P3332</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2166">P2166</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3380">P3380</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2137">P2137</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3759">P3759</a></li>
+</ul>
+<h2 id="可持久化Trie树"><a href="#可持久化Trie树" class="headerlink" title="可持久化Trie树"></a>可持久化Trie树</h2><p>可持久化Trie树</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2048">P2048</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3527">P3527</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3302">P3302</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3168">P3168</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3242">P3242</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3241">P3241</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3293">P3293</a></li>
+</ul>
+<h2 id="莫队算法"><a href="#莫队算法" class="headerlink" title="莫队算法"></a>莫队算法</h2><p>莫队算法</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1972">P1972</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2336">P2336</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3709">P3709</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2709">P2709</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3674">P3674</a></li>
+</ul>
+<h2 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h2><p>分块</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1972">P1972</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3396">P3396</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1822">P1822</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2801">P2801</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3203">P3203</a></li>
+</ul>
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>莫比乌斯反演</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3768">P3768</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3172">P3172</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3455">P3455</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2522">P2522</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3327">P3327</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>其他</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3377">P3377</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3261">P3261</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3382">P3382</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2571">P2571</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3222">P3222</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3187">P3187</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3199">P3199</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3292">P3292</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2824">P2824</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3285">P3285</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1552">P1552</a></li>
+</ul>
+<h1 id="USACO"><a href="#USACO" class="headerlink" title="USACO"></a>USACO</h1><p>美国经典的算法练习题库，值得一刷</p>
+<h2 id="USACO-Section-1-1"><a href="#USACO-Section-1-1" class="headerlink" title="USACO Section 1.1"></a>USACO Section 1.1</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1200">P1200</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1201">P1201</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1202">P1202</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1203">P1203</a></li>
+</ul>
+<h2 id="USACO-Section-1-2"><a href="#USACO-Section-1-2" class="headerlink" title="USACO Section 1.2"></a>USACO Section 1.2</h2><p>完全枚举</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3864">P3864</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1204">P1204</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1205">P1205</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1206">P1206</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1207">P1207</a></li>
+</ul>
+<h2 id="USACO-Section-1-3"><a href="#USACO-Section-1-3" class="headerlink" title="USACO Section 1.3"></a>USACO Section 1.3</h2><p>贪心</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1208">P1208</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1209">P1209</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1211">P1211</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1444">P1444</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3650">P3650</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2693">P2693</a></li>
+</ul>
+<h2 id="USACO-Section-1-4"><a href="#USACO-Section-1-4" class="headerlink" title="USACO Section 1.4"></a>USACO Section 1.4</h2><p>有技巧的枚举</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1214">P1214</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1215">P1215</a></li>
+</ul>
+<h2 id="USACO-Section-1-5"><a href="#USACO-Section-1-5" class="headerlink" title="USACO Section 1.5"></a>USACO Section 1.5</h2><p>二进制数</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1216">P1216</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1217">P1217</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1218">P1218</a></li>
+</ul>
+<h2 id="USACO-Section-2-1"><a href="#USACO-Section-2-1" class="headerlink" title="USACO Section 2.1"></a>USACO Section 2.1</h2><p>图论和洪水填充</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1457">P1457</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1458">P1458</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1459">P1459</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1460">P1460</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1461">P1461</a></li>
+</ul>
+<h2 id="USACO-Section-2-2"><a href="#USACO-Section-2-2" class="headerlink" title="USACO Section 2.2"></a>USACO Section 2.2</h2><p>数据结构与动态规划</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1465">P1465</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1466">P1466</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1467">P1467</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1468">P1468</a></li>
+</ul>
+<h2 id="USACO-Section-2-3"><a href="#USACO-Section-2-3" class="headerlink" title="USACO Section 2.3"></a>USACO Section 2.3</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1470">P1470</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1472">P1472</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1473">P1473</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1474">P1474</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1475">P1475</a></li>
+</ul>
+<h2 id="USACO-Section-2-4"><a href="#USACO-Section-2-4" class="headerlink" title="USACO Section 2.4"></a>USACO Section 2.4</h2><p>最短路径</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1518">P1518</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1519">P1519</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1522">P1522</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1529">P1529</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1530">P1530</a></li>
+</ul>
+<h2 id="USACO-Section-3-1"><a href="#USACO-Section-3-1" class="headerlink" title="USACO Section 3.1"></a>USACO Section 3.1</h2><p>最小生成树</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1546">P1546</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2722">P2722</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2723">P2723</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2724">P2724</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2725">P2725</a></li>
+</ul>
+<h2 id="USACO-Section-3-2"><a href="#USACO-Section-3-2" class="headerlink" title="USACO Section 3.2"></a>USACO Section 3.2</h2><p>背包问题</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1134">P1134</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2727">P2727</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2728">P2728</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2729">P2729</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2730">P2730</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1828">P1828</a></li>
+</ul>
+<h2 id="USACO-Section-3-3"><a href="#USACO-Section-3-3" class="headerlink" title="USACO Section 3.3"></a>USACO Section 3.3</h2><p>欧拉回路</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2731">P2731</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2732">P2732</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1930">P1930</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2733">P2733</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2734">P2734</a></li>
+</ul>
+<h2 id="USACO-Section-3-4"><a href="#USACO-Section-3-4" class="headerlink" title="USACO Section 3.4"></a>USACO Section 3.4</h2><p>计算几何</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1827">P1827</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2735">P2735</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2736">P2736</a></li>
+</ul>
+<h2 id="USACO-Section-4-1"><a href="#USACO-Section-4-1" class="headerlink" title="USACO Section 4.1"></a>USACO Section 4.1</h2><p>最优化</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2737">P2737</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2738">P2738</a></li>
+</ul>
+<h2 id="USACO-Section-4-2"><a href="#USACO-Section-4-2" class="headerlink" title="USACO Section 4.2"></a>USACO Section 4.2</h2><p>网络流</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2740">P2740</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1894">P1894</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2751">P2751</a></li>
+</ul>
+<h2 id="USACO-Section-4-3"><a href="#USACO-Section-4-3" class="headerlink" title="USACO Section 4.3"></a>USACO Section 4.3</h2><p>高精度</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2687">P2687</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2752">P2752</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2753">P2753</a></li>
+</ul>
+<h2 id="USACO-Section-4-4"><a href="#USACO-Section-4-4" class="headerlink" title="USACO Section 4.4"></a>USACO Section 4.4</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1344">P1344</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2739">P2739</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2741">P2741</a></li>
+</ul>
+<h2 id="USACO-Section-5-1"><a href="#USACO-Section-5-1" class="headerlink" title="USACO Section 5.1"></a>USACO Section 5.1</h2><p>二维凸包</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2742">P2742</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2743">P2743</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2749">P2749</a></li>
+</ul>
+<h2 id="USACO-Section-5-2"><a href="#USACO-Section-5-2" class="headerlink" title="USACO Section 5.2"></a>USACO Section 5.2</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1560">P1560</a></li>
+</ul>
+<h2 id="USACO-Section-5-3"><a href="#USACO-Section-5-3" class="headerlink" title="USACO Section 5.3"></a>USACO Section 5.3</h2><p>启发式搜索</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2701">P2701</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2744">P2744</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2745">P2745</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2746">P2746</a></li>
+</ul>
+<h2 id="USACO-Section-5-4"><a href="#USACO-Section-5-4" class="headerlink" title="USACO Section 5.4"></a>USACO Section 5.4</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1345">P1345</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2747">P2747</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2748">P2748</a></li>
+</ul>
+<h2 id="USACO-Section-5-5"><a href="#USACO-Section-5-5" class="headerlink" title="USACO Section 5.5"></a>USACO Section 5.5</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1709">P1709</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1856">P1856</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2750">P2750</a></li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>前洛谷试炼场</p><p><a href="https://slzwzjn.github.io/2020/04/10/前洛谷试炼场/">https://slzwzjn.github.io/2020/04/10/前洛谷试炼场/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>slzwzjn</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-04-10</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-03-20</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%BC%96%E7%A8%8B/">编程</a><a class="link-muted mr-2" rel="tag" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/">算法竞赛</a></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_telegram"></a><a class="a2a_button_whatsapp"></a><a class="a2a_button_reddit"></a></div><script src="https://static.addtoany.com/menu/page.js" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechat.JPG" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/06/06/%E3%80%8A%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80%E3%80%8B%E5%85%A8%E6%96%87/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">《共产党宣言》全文</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/04/09/%EF%BC%88%E8%BD%AC%EF%BC%89Python3%E5%BF%AB%E9%80%9F%E5%85%A5%E5%9C%9F%E6%8C%87%E5%8D%97/"><span class="level-item">（转）Python3快速入土指南</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "b973f09d0bcc002d7b503f15929becf6",
+            repo: "BlogComment",
+            owner: "slzwzjn",
+            clientID: "a9e785dff3712c4766cd",
+            clientSecret: "79137bbabee085471338aac37e18689fab114b1f",
+            admin: ["slzwzjn"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatarz.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">slzwzjn</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>东营</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">24</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">22</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://www.zhihu.com/people/zhang-jianing-2005" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/slzwzjn"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="https://weibo.com/u/5277288388"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:slzwzjn1212@outlook.com"><i class="fab fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="知乎" href="https://www.zhihu.com/people/zhang-jianing-2005">知乎</a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GitHub</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://www.jsdelivr.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">jsDelivr</span></span><span class="level-right"><span class="level-item tag">www.jsdelivr.com</span></span></a></li><li><a class="level is-mobile" href="http://www.sldyzx.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">胜利一中</span></span><span class="level-right"><span class="level-item tag">www.sldyzx.cn</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E4%BD%9C%E6%96%87%E4%B8%8E%E6%BC%94%E8%AE%B2/"><span class="level-start"><span class="level-item">作文与演讲</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E4%BF%A1%E6%81%AF%E5%AD%A6/"><span class="level-start"><span class="level-item">信息学</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%85%B6%E4%BB%96/"><span class="level-start"><span class="level-item">其他</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%94%BF%E6%B2%BB%E8%91%97%E4%BD%9C%E5%8F%8A%E5%85%B6%E8%A7%A3%E8%AF%BB/"><span class="level-start"><span class="level-item">政治著作及其解读</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%89%E8%B6%A3/"><span class="level-start"><span class="level-item">有趣</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9D%82/"><span class="level-start"><span class="level-item">杂</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%9F%A5%E4%B9%8E%E5%9B%9E%E7%AD%94/"><span class="level-start"><span class="level-item">知乎回答</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%95%81%E9%93%9D/"><span class="level-start"><span class="level-item">镁铝</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><figure class="media-left"><a class="image" href="/2022/07/02/%E5%86%92%E6%B3%A1/"><img src="https://cdn.jsdelivr.net/gh/slzwzjn/picservice/zipped/IMG_5487(1).jpg" alt="冒泡"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-07-02T11:10:04.000Z">2022-07-02</time></p><p class="title"><a href="/2022/07/02/%E5%86%92%E6%B3%A1/">冒泡</a></p><p class="categories"><a href="/categories/%E9%95%81%E9%93%9D/">镁铝</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/08/21/LSR-3/"><img src="https://cdn.jsdelivr.net/gh/slzwzjn/picservice/zipped/l6%20(33).jpg" alt="LSR-3"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-08-21T07:07:16.000Z">2021-08-21</time></p><p class="title"><a href="/2021/08/21/LSR-3/">LSR-3</a></p><p class="categories"><a href="/categories/%E6%9D%82/">杂</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/08/14/LSR-2/"><img src="https://cdn.jsdelivr.net/gh/slzwzjn/picservice/zipped/l4%20(22).jpg" alt="LSR-2"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-08-14T12:55:47.000Z">2021-08-14</time></p><p class="title"><a href="/2021/08/14/LSR-2/">LSR-2</a></p><p class="categories"><a href="/categories/%E6%9D%82/">杂</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/08/11/LSR-1/"><img src="https://cdn.jsdelivr.net/gh/slzwzjn/picservice/zipped/l1%20(25).jpg" alt="LSR-1"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-08-11T02:26:43.000Z">2021-08-11</time></p><p class="title"><a href="/2021/08/11/LSR-1/">LSR-1</a></p><p class="categories"><a href="/categories/%E6%9D%82/">杂</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/02/%E7%BE%8E%E5%9B%BE%E6%8E%A8%E9%80%816/"><img src="https://cdn.jsdelivr.net/gh/slzwzjn/picservice/zipped/946%20(6).jpg" alt="美图推送6"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-02T04:19:53.000Z">2021-07-02</time></p><p class="title"><a href="/2021/07/02/%E7%BE%8E%E5%9B%BE%E6%8E%A8%E9%80%816/">美图推送6</a></p><p class="categories"><a href="/categories/%E9%95%81%E9%93%9D/">镁铝</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">八月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/07/"><span class="level-start"><span class="level-item">七月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/04/"><span class="level-start"><span class="level-item">四月 2020</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/03/"><span class="level-start"><span class="level-item">三月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/SL-Zhangjn-Team/"><span class="tag">SL-Zhangjn-Team</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E3%80%8A%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80%E3%80%8B/"><span class="tag">《共产党宣言》</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E3%80%8A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%E3%80%8B/"><span class="tag">《毛泽东选集》</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BD%9C%E6%96%87/"><span class="tag">作文</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%88%9D%E4%B8%AD/"><span class="tag">初中</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AE%9E%E7%94%A8%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/"><span class="tag">实用编程技巧</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%81%E6%96%87/"><span class="tag">征文</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%9D%E6%83%B3/"><span class="tag">思想</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%89%E8%B6%A3/"><span class="tag">有趣</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9D%82/"><span class="tag">杂</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AF%9B%E6%B3%BD%E4%B8%9C/"><span class="tag">毛泽东</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%BC%94%E8%AE%B2/"><span class="tag">演讲</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E4%B9%8E/"><span class="tag">知乎</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/"><span class="tag">算法竞赛</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BC%96%E7%A8%8B/"><span class="tag">编程</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><span class="tag">计算机</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%95%81%E9%93%9D/"><span class="tag">镁铝</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D/"><span class="tag">马克思</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A9%AC%E5%88%97%E6%96%AF%E6%AF%9B/"><span class="tag">马列斯毛</span><span class="tag">3</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="slzwzjn 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 slzwzjn</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Blog Repository" href="https://github.com/slzwzjn/slzwzjn.github.io"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
